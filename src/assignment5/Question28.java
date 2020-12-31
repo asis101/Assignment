@@ -4,25 +4,21 @@ import javax.swing.*;
 
 public class Question28 {
 
-    public void isPrimeNumber(int num) {
-        int flag = 1;
+    public boolean isPrimeNumber(int num) {
+        boolean isPrime = true;
+
         if (num == 0 || num == 1) {
-//            System.out.println(num + " is not a Prime Number");
-            flag = 0;
+            isPrime = false;
+            return isPrime;
         } else {
             for (int i = 2; i < num; i++) {
                 if (num % i == 0) {
-//                    System.out.println(num + " is not a Prime Number ");
-                    flag = 0;
+                    isPrime = false;
                     break;
                 }
             }
         }
-        if (flag == 1) {
-            System.out.println(num + " is a Prime Number");
-        } else {
-            System.out.println(num + " is a not Prime Number");
-        }
+        return isPrime;
     }
 
     public void firstNthPrime(int nth) {
@@ -68,7 +64,12 @@ public class Question28 {
     public static void main(String[] args) {
         Question28 ob1 = new Question28();
         int a = Integer.parseInt(JOptionPane.showInputDialog("Enter a number:"));
-        ob1.isPrimeNumber(a);
+        boolean isPrime = ob1.isPrimeNumber(a);
+        if (isPrime) {
+            System.out.println(a + " is a Prime Number");
+        } else {
+            System.out.println(a + " is not a Prime Number");
+        }
 
         int b = Integer.parseInt(JOptionPane.showInputDialog("Enter a number to find its first nth prime numbers:"));
         ob1.firstNthPrime(b);
