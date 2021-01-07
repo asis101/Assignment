@@ -13,8 +13,8 @@ public class Question32 {
             arr[i] = input.nextInt();
         }
         //to sum the elements of array
-        for (int i = 0; i < arr.length ; i++) {
-            sum = sum + arr[i];
+        for (int a : arr) {
+            sum = sum + a ;
         }
         System.out.println("Sum of array elements is: " + sum);
     }

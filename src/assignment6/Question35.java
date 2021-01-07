@@ -20,11 +20,12 @@ public class Question35 {
 
         int largest = 0;
         int secondLargest = 0;
-
+        //to find the largest
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > largest)
                 largest = arr[i];
         }
+        //the to find second largest
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < largest && arr[i] > secondLargest )
                 secondLargest = arr[i];
