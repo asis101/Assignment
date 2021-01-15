@@ -6,43 +6,48 @@ public class BankTest {
 
     public static void main(String[] args) {
         BankAccount account = null;
+        int option;
 
-        System.out.println("Welcome To Bank");
-        System.out.println();
-        System.out.println("=============");
-        System.out.println("Create an Account, with following option");
-        System.out.println("\t 1. Account with name only");
-        System.out.println("\t 2. Account with name and initial balance");
-        System.out.println("=============");
-        System.out.println();
+        do {
+            System.out.println("Welcome To Bank");
+            System.out.println();
+            System.out.println("=============");
+            System.out.println("Create an Account, with following option");
+            System.out.println("\t 1. Account with name only");
+            System.out.println("\t 2. Account with name and initial balance");
+            System.out.println("\t 3. Exit");
+            System.out.println("=============");
+            System.out.println();
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your option");
-        int option = input.nextInt();
+            Scanner input = new Scanner(System.in);
+            System.out.println("Enter your option");
+            option = input.nextInt();
 
-        String name;
-        double balance;
-        switch (option) {
-            case 1:
-                System.out.println("Enter account's holder name");
-                name = input.next();
-                account = new BankAccount(name);
-                account.displayInfo();
-                account.showMenu();
-                break;
-            case 2:
-                System.out.println("Enter account's holder name");
-                name = input.next();
-                System.out.println("Enter initial balance");
-                balance = input.nextDouble();
-                account = new BankAccount(name, balance);
-                account.displayInfo();
-                account.showMenu();
-                break;
-            default:
-                System.out.println("Wrong Option");
-        }
-
-
+            String name;
+            double balance;
+            switch (option) {
+                case 1:
+                    System.out.println("Enter account's holder name");
+                    name = input.next();
+                    account = new BankAccount(name);
+                    account.displayInfo();
+                    account.showMenu();
+                    break;
+                case 2:
+                    System.out.println("Enter account's holder name");
+                    name = input.next();
+                    System.out.println("Enter initial balance");
+                    balance = input.nextDouble();
+                    account = new BankAccount(name, balance);
+                    account.displayInfo();
+                    account.showMenu();
+                    break;
+                case 3:
+                    System.out.println("Thank You");
+                    break;
+                default:
+                    System.out.println("Wrong Option");
+            }
+        }while (option != 3);
     }
 }
